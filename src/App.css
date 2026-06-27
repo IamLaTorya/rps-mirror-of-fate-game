@@ -1,0 +1,614 @@
+/* ---------------------------------------------------------
+   LOGO CONTAINER — centers the logo and keeps it responsive
+--------------------------------------------------------- */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* centers horizontally */
+  justify-content: center;  /* centers vertically */
+  text-align: center;
+  width: 100%;
+  height: auto;
+}
+
+/* Logo image sizing + centering */
+.logo-container img {
+  max-width: 450px;   /* controls max size of logo */
+  display: block;     /* prevents inline spacing issues */
+  margin: 0 auto;     /* ensures center alignment */
+  width: 100%;        /* scales down on small screens */
+  height: auto;
+}
+
+/* Directions text under the logo */
+.directions {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ---------------------------------------------------------
+   APP LAYOUT — centers the card on the screen
+--------------------------------------------------------- */
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;       /* full screen height */
+  background: #12121a;     /* deep mystic background */
+  color: #f7f7ff;
+  font-family: "Poppins", sans-serif;
+  padding: 16px;
+}
+.app-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Card container for each screen */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------------------------------------------------------
+   SCREEN FADE-IN ANIMATION
+--------------------------------------------------------- */
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------------
+   BUTTON STYLING
+--------------------------------------------------------- */
+button {
+  background: #7f5af0;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  color: #f7f7ff;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 8px;
+  transition: 0.2s ease;
+}
+
+/* Hover effect for active buttons */
+button:hover:not(:disabled) {
+  background: #9b7ff7;
+  transform: scale(1.05);
+}
+
+/* Disabled button styling */
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+/* ---------------------------------------------------------
+   INPUT FIELD STYLING
+--------------------------------------------------------- */
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  background: #1b1b24;
+  color: #f7f7ff;
+}
+
+/* Ensures input fits inside card without overflow */
+.card input {
+  display: block;
+  margin: 0 auto 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Question text styling */
+.question-text {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* ---------------------------------------------------------
+   SCORE ROW
+--------------------------------------------------------- */
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 10px 0 16px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* ---------------------------------------------------------
+   MOVE BUTTON GRID
+--------------------------------------------------------- */
+.button-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* Mobile layout: 3 buttons per row */
+@media (max-width: 480px) {
+  .button-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Individual move buttons */
+.button-row button {
+  font-size: 1.8rem;
+  padding: 12px;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+}
+
+/* ---------------------------------------------------------
+   RESULTS SECTION
+--------------------------------------------------------- */
+.results {
+  margin-top: 16px;
+}
+
+/* ---------------------------------------------------------
+   MYSTIC MIRROR FRAME
+--------------------------------------------------------- */
+.mirror-frame {
+  margin: 0 auto 16px;
+  width: 220px;
+  max-width: 70vw;
+  height: 260px;
+  max-height: 60vh;
+  border-radius: 24px;
+  padding: 6px;
+  background: linear-gradient(135deg, #c7a6ff, #6b2fbf);
+  box-shadow: 0 0 18px rgba(199, 166, 255, 0.6);
+}
+
+/* Mirror glass interior */
+.mirror-glass {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: radial-gradient(circle at 30% 20%, #3a1a5f, #1a0f2e);
+}
+
+/* ---------------------------------------------------------
+   SWIRLING FOG EFFECT INSIDE MIRROR
+--------------------------------------------------------- */
+.mirror-glass::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 20% 0%, #6d3fa833, transparent 60%),
+              radial-gradient(circle at 80% 100%, #4b2a7a33, transparent 60%);
+  mix-blend-mode: screen;
+  animation: swirlFog 8s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes swirlFog {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-10px, 10px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* ---------------------------------------------------------
+   MIRROR RIPPLE EFFECT
+--------------------------------------------------------- */
+.mirror-ripple-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: radial-gradient(circle, #ffffff33 0%, transparent 60%);
+  animation: rippleSurface 0.5s ease-out forwards;
+}
+
+@keyframes rippleSurface {
+  0%   { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+
+/* ---------------------------------------------------------
+   MIRROR CONTENT LAYOUT
+--------------------------------------------------------- */
+.mirror-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------------------------------------------------
+   LABELS ABOVE EMOJIS
+--------------------------------------------------------- */
+.labels-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  padding: 12px;
+}
+
+/* Fade-in animation for labels */
+.labels-fade {
+  animation: labelsFadeIn 0.4s ease-out forwards;
+}
+
+@keyframes labelsFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Label block layout */
+.label-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Label text styling */
+.label-text {
+  font-size: 0.8rem;
+  color: #f7f7ff;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Emoji under labels */
+.choice-emoji {
+  font-size: 2rem;
+  text-shadow:
+    0 0 4px rgba(0, 0, 0, 0.8),
+    0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------------------------------------------------------
+   CENTER STAGE FOR DUEL ANIMATIONS
+--------------------------------------------------------- */
+.mirror-center-stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------------------------------------------------
+   CINEMATIC DUEL SYSTEM
+--------------------------------------------------------- */
+
+/* Winner starting positions */
+.winner-from-left  { transform: translateX(-140%); }
+.winner-from-right { transform: translateX(140%); }
+
+/* Loser starting positions */
+.loser-from-left  { transform: translateX(-40%); }
+.loser-from-right { transform: translateX(40%); }
+
+/* Winner travel animation */
+.winner-travel {
+  animation: winnerTravel 0.9s cubic-bezier(0.22, 1.2, 0.32, 1) forwards;
+}
+
+@keyframes winnerTravel {
+  0% {
+    transform: translateX(var(--start)) scale(0.9) rotate(0deg);
+    filter: drop-shadow(0 0 0px #ffffff00);
+  }
+  40% {
+    transform: translateX(10%) scale(1.35) rotate(-12deg);
+    filter: drop-shadow(0 0 12px #ffffffaa);
+  }
+  70% {
+    transform: translateX(-4%) scale(1.25) rotate(6deg);
+  }
+  100% {
+    transform: translateX(0) scale(1.15) rotate(0deg);
+    filter: drop-shadow(0 0 8px #ffffff88);
+  }
+}
+
+
+/* Loser reaction animation */
+.loser-react {
+  animation: loserReact 0.9s cubic-bezier(0.22, 1.2, 0.32, 1) forwards;
+}
+
+@keyframes loserReact {
+  0% {
+    transform: translateX(var(--start)) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(0) scale(1.2) rotate(8deg);
+  }
+  45% {
+    transform: translateX(-6%) scale(0.95) rotate(-12deg);
+  }
+  70% {
+    transform: translateY(20%) rotate(-18deg) scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(160%) rotate(-28deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Base emoji styling for duel */
+.cinema-winner,
+.cinema-loser {
+  font-size: 3rem;
+  position: absolute;
+  z-index: 3;
+  text-shadow:
+    0 0 4px rgba(0, 0, 0, 0.8),
+    0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------------------------------------------------------
+   MATCHUP-SPECIFIC ANIMATIONS
+--------------------------------------------------------- */
+
+/* ✂️ scissors cut paper */
+.cinema-cut {
+  animation: cinemaCut 0.9s cubic-bezier(0.22, 1.3, 0.32, 1) forwards;
+}
+
+@keyframes cinemaCut {
+  0% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 0px #ffb3ff00);
+  }
+  25% {
+    transform: scale(1.35) rotate(-25deg) translateX(-6px);
+    filter: drop-shadow(0 0 14px #ffb3ffcc);
+  }
+  55% {
+    transform: scale(1.15) rotate(12deg) translateX(4px);
+  }
+  100% {
+    transform: scale(1.2) rotate(0deg);
+    filter: drop-shadow(0 0 8px #ffb3ffaa);
+  }
+}
+
+
+/* 📄 paper covers rock */
+.cinema-cover {
+  animation: cinemaCover 0.9s cubic-bezier(0.22, 1.3, 0.32, 1) forwards;
+}
+
+@keyframes cinemaCover {
+  0% {
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 0px #ffffff00);
+  }
+  30% {
+    transform: scale(1.35) translateY(-10px) rotate(-6deg);
+    filter: drop-shadow(0 0 12px #ffffffaa);
+  }
+  60% {
+    transform: scale(1.25) translateY(4px) rotate(4deg);
+  }
+  100% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 6px #ffffff88);
+  }
+}
+
+
+/* 🪨 rock smashes scissors */
+.cinema-smash {
+  animation: cinemaSmash 0.95s cubic-bezier(0.22, 1.4, 0.32, 1) forwards;
+}
+
+@keyframes cinemaSmash {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px #ff444400);
+  }
+  25% {
+    transform: scale(1.45) translateY(8px) rotate(-10deg);
+    filter: drop-shadow(0 0 16px #ff4444cc);
+  }
+  55% {
+    transform: scale(1.3) rotate(6deg);
+  }
+  100% {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 8px #ff444488);
+  }
+}
+
+/* 🦎 lizard bites paper */
+.cinema-bite {
+  animation: cinemaBite 0.9s cubic-bezier(0.22, 1.3, 0.32, 1) forwards;
+}
+
+@keyframes cinemaBite {
+  0% {
+    transform: scale(1) translateX(0);
+    filter: drop-shadow(0 0 0px #aaffaa00);
+  }
+  25% {
+    transform: scale(1.35) translateX(10px) rotate(-10deg);
+    filter: drop-shadow(0 0 14px #aaffaacc);
+  }
+  55% {
+    transform: scale(1.2) translateX(-4px) rotate(6deg);
+  }
+  100% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 8px #aaffaa88);
+  }
+}
+
+
+/* 🖖 spock vaporizes rock */
+.cinema-vaporize {
+  animation: cinemaVaporize 1s cubic-bezier(0.22, 1.3, 0.32, 1) forwards;
+}
+
+@keyframes cinemaVaporize {
+  0% {
+    filter: drop-shadow(0 0 0px #4cc3ff00);
+    transform: scale(1);
+  }
+  30% {
+    filter: drop-shadow(0 0 18px #4cc3ffff);
+    transform: scale(1.4) rotate(6deg);
+  }
+  60% {
+    filter: drop-shadow(0 0 10px #4cc3ffcc);
+    transform: scale(1.25) rotate(-4deg);
+  }
+  100% {
+    filter: drop-shadow(0 0 8px #4cc3ff99);
+    transform: scale(1.15);
+  }
+}
+
+/* Generic fallback animation */
+.cinema-generic {
+  animation: cinemaGeneric 0.7s ease-out forwards;
+}
+
+@keyframes cinemaGeneric {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.2); }
+  100% { transform: scale(1.1); }
+}
+
+/* ---------------------------------------------------------
+   NULL ROUND (TIE) ANIMATION
+--------------------------------------------------------- */
+.mirror-null-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.mirror-null-emoji {
+  font-size: 2.4rem;
+}
+
+/* Tie bump animation */
+.null-bump {
+  animation: nullBump 0.7s ease-out forwards;
+}
+
+@keyframes nullBump {
+  0%   { transform: translateY(0); opacity: 1; }
+  30%  { transform: translateY(-6px); }
+  60%  { transform: translateY(6px); }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+/* ---------------------------------------------------------
+   FINAL MESSAGE INSIDE MIRROR
+--------------------------------------------------------- */
+.mirror-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.mirror-message-text {
+  font-size: 0.95rem;
+  color: #f7f7ff;
+  text-align: center;
+  text-shadow:
+    0 0 4px rgba(0, 0, 0, 0.9),
+    0 0 8px rgba(0, 0, 0, 0.7);
+}
+/* Fixed footer at bottom of screen */
+.game-footer {
+  text-align: center;
+  padding: 10px 0;
+  color: #cfc7ff;
+  font-size: 0.75rem;
+  opacity: 0.85;
+  margin-top: 20px;
+}
+
+.footer-text {
+  margin: 0;
+}
+
+.footer-divider {
+  margin: 0 6px;
+}
+
+
+
+/* ---------------------------------------------------------
+   MOBILE RESPONSIVENESS
+--------------------------------------------------------- */
+@media (max-width: 480px) {
+  .card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .mirror-frame {
+    width: 180px;
+    height: 220px;
+  }
+
+  .cinema-winner,
+  .cinema-loser {
+    font-size: 2.6rem;
+  }
+
+  .mirror-null-emoji {
+    font-size: 2.2rem;
+  }
+
+  .button-row button {
+    width: 56px;
+    height: 56px;
+    font-size: 1.6rem;
+  }
+
+  .score-row {
+    font-size: 0.85rem;
+  }
+
+  .mirror-message-text {
+    font-size: 0.9rem;
+  }
+}
