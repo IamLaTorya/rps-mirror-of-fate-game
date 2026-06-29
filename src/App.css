@@ -1,6 +1,4 @@
-/* ---------------------------------------------------------
-   LOGO CONTAINER — centers the logo and keeps it responsive
---------------------------------------------------------- */
+  /* LOGO CONTAINER — centers the logo and keeps it responsive */
 .logo-container {
   display: flex;
   flex-direction: column;
@@ -32,9 +30,7 @@
   margin-bottom: 20px;
 }
 
-/* ---------------------------------------------------------
-   APP LAYOUT — centers the card on the screen
---------------------------------------------------------- */
+/* APP LAYOUT — centers the card on the screen */
 .app {
   display: flex;
   flex-direction: column;
@@ -67,9 +63,7 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 }
 
-/* ---------------------------------------------------------
-   SCREEN FADE-IN ANIMATION
---------------------------------------------------------- */
+/* SCREEN FADE-IN ANIMATION */
 .fade-in {
   animation: fadeIn 0.5s ease-out;
 }
@@ -86,9 +80,7 @@
   }
 }
 
-/* ---------------------------------------------------------
-   BUTTON STYLING
---------------------------------------------------------- */
+/* BUTTON STYLING */
 button {
   background: #7f5af0;
   border: none;
@@ -113,9 +105,7 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* ---------------------------------------------------------
-   Instruction Screen Container — centers content and adds spacing
---------------------------------------------------------- */
+/* Instruction Screen Container — centers content and adds spacing */
 .instruction-screen {
   max-width: 600px;
   margin: 0 auto;
@@ -124,19 +114,14 @@ button:disabled {
   color: #f7f7ff;
 }
 
-/* ---------------------------------------------------------
-   Title styling — larger, centered, mystical
---------------------------------------------------------- */
+/* Title styling — larger, centered, mystical*/
 .instruction-title {
   text-align: center;
   font-size: 1.6rem;
   margin-bottom: 16px;
 }
 
-
-/* ---------------------------------------------------------
-   INPUT FIELD STYLING
---------------------------------------------------------- */
+/* INPUT FIELD STYLING */
 input {
   width: 100%;
   padding: 10px;
@@ -162,14 +147,11 @@ input {
   opacity: 0.9;
 }
 
-/* ---------------------------------------------------------
-   Why Button — minimal icon-only button
---------------------------------------------------------- */
+/* Why Button — minimal icon-only button */
 .why-button {
   background: transparent;
   /* no background */
   border: none;
-  /* no border */
   color: #cfc7ff;
   /* mystical lavender */
   font-size: 1.4rem;
@@ -182,9 +164,7 @@ input {
   /* smooth hover */
 }
 
-/* ---------------------------------------------------------
-   Hover — soft glow without changing layout
---------------------------------------------------------- */
+/* Hover — soft glow without changing layout */
 .why-button:hover {
   color: #ffffff;
   /* brighten the icon */
@@ -194,10 +174,7 @@ input {
   /* gentle pop */
 }
 
-
-/* ---------------------------------------------------------
-   SCORE ROW
---------------------------------------------------------- */
+/* SCORE ROW */
 .score-row {
   display: flex;
   justify-content: space-between;
@@ -207,9 +184,7 @@ input {
   opacity: 0.9;
 }
 
-/* ---------------------------------------------------------
-   MOVE BUTTON GRID
---------------------------------------------------------- */
+/* MOVE BUTTON GRID */
 .button-row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -233,16 +208,12 @@ input {
   border-radius: 14px;
 }
 
-/* ---------------------------------------------------------
-   RESULTS SECTION
---------------------------------------------------------- */
+/* RESULTS SECTION */
 .results {
   margin-top: 16px;
 }
 
-/* ---------------------------------------------------------
-   MYSTIC MIRROR FRAME
---------------------------------------------------------- */
+/* MYSTIC MIRROR FRAME */
 .mirror-frame {
   margin: 0 auto 16px;
   width: 220px;
@@ -276,38 +247,7 @@ input {
   left: 380px;
 }
 
-
-/* ---------------------------------------------------------
-   SWIRLING FOG EFFECT INSIDE MIRROR
---------------------------------------------------------- */
-.mirror-glass::before {
-  content: "";
-  position: absolute;
-  inset: -20%;
-  background: radial-gradient(circle at 20% 0%, #6d3fa833, transparent 60%),
-    radial-gradient(circle at 80% 100%, #4b2a7a33, transparent 60%);
-  mix-blend-mode: screen;
-  animation: swirlFog 8s linear infinite;
-  opacity: 0.4;
-}
-
-@keyframes swirlFog {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-
-  50% {
-    transform: translate(-10px, 10px) scale(1.05);
-  }
-
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-}
-
-/* ---------------------------------------------------------
-   MIRROR RIPPLE EFFECT
---------------------------------------------------------- */
+/* MIRROR RIPPLE EFFECT */
 .mirror-ripple-layer {
   position: absolute;
   inset: 0;
@@ -345,9 +285,7 @@ input {
   }
 }
 
-/* ---------------------------------------------------------
-   MIRROR CONTENT LAYOUT
---------------------------------------------------------- */
+/* MIRROR CONTENT LAYOUT */
 .mirror-content {
   position: absolute;
   inset: 0;
@@ -356,9 +294,7 @@ input {
   justify-content: center;
 }
 
-/* ---------------------------------------------------------
-   LABELS ABOVE EMOJIS
---------------------------------------------------------- */
+/* LABELS ABOVE EMOJIS */
 .labels-row {
   display: flex;
   flex-direction: row;
@@ -397,17 +333,20 @@ input {
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
 }
 
-/* Emoji under labels */
-.choice-emoji {
-  font-size: 2rem;
+/* text shadow base for .choice-emoji, .cinema-winner, and .cinema-loser */
+.choice-emoji,
+.cinema-winner,
+.cinema-loser{
   text-shadow:
     0 0 4px rgba(0, 0, 0, 0.8),
     0 0 8px rgba(0, 0, 0, 0.6);
 }
+/* Emoji under labels */
+.choice-emoji {
+  font-size: 2rem;
+}
 
-/* ---------------------------------------------------------
-   CENTER STAGE FOR DUEL ANIMATIONS
---------------------------------------------------------- */
+/* CENTER STAGE FOR DUEL ANIMATIONS */
 .mirror-center-stage {
   position: absolute;
   inset: 0;
@@ -416,9 +355,7 @@ input {
   justify-content: center;
 }
 
-/* ---------------------------------------------------------
-   CINEMATIC DUEL SYSTEM
---------------------------------------------------------- */
+/* CINEMATIC DUEL SYSTEM */
 
 /* Winner starting positions */
 .winner-from-left {
@@ -445,7 +382,7 @@ input {
 
 @keyframes winnerTravel {
   0% {
-    transform: translateX(var(--start)) scale(0.9) rotate(0deg);
+    transform: scale(0.9) rotate(0deg);
     filter: drop-shadow(0 0 0px #ffffff00);
   }
 
@@ -464,7 +401,6 @@ input {
   }
 }
 
-
 /* Loser reaction animation */
 .loser-react {
   animation: loserReact 1.25s cubic-bezier(0.22, 1.2, 0.32, 1) forwards;
@@ -472,28 +408,19 @@ input {
 
 @keyframes loserReact {
   0% {
-    transform: translateX(var(--start)) scale(1) rotate(0deg);
+    transform: scale(1) translateY(0);
     opacity: 1;
   }
-
-  25% {
-    transform: translateX(0) scale(1.2) rotate(8deg);
+  40% {
+    transform: scale(0.9) translateY(10px);
+    opacity: 0.9;
   }
-
-  45% {
-    transform: translateX(-6%) scale(0.95) rotate(-12deg);
-  }
-
-  70% {
-    transform: translateY(20%) rotate(-18deg) scale(0.9);
-    opacity: 0.8;
-  }
-
   100% {
-    transform: translateY(160%) rotate(-28deg) scale(0.8);
+    transform: scale(0.8) translateY(120px);
     opacity: 0;
   }
 }
+
 .cinema-winner {
   animation-fill-mode: forwards;
 }
@@ -504,114 +431,118 @@ input {
   font-size: 3rem;
   position: absolute;
   z-index: 3;
-  text-shadow:
-    0 0 4px rgba(0, 0, 0, 0.8),
-    0 0 8px rgba(0, 0, 0, 0.6);
 }
 
-/* ---------------------------------------------------------
-   MATCHUP-SPECIFIC ANIMATIONS
---------------------------------------------------------- */
+   /* MATCHUP-SPECIFIC ANIMATIONS */
+/* Shared drop animation for all losing emojis */
+@keyframes baseDrop {
+  0%   { transform: scale(1) translateY(0);   opacity: 1; }
+  50%  { transform: scale(0.9) translateY(20px); opacity: 0.7; }
+  100% { transform: scale(0.8) translateY(120px); opacity: 0; }
+}
+
+/* Utility class applied automatically via DuelStage */
+.base-drop {
+  animation: baseDrop 1.25s ease-out forwards;
+}
 
 /* ✂️ shears cut */
 .cinema-cut {
-  animation: cutScroll 1s ease-out forwards;
+  animation:
+    cutScroll 1.25s ease-out forwards,
+    baseDrop 1.25s ease-out forwards;
 }
 
 @keyframes cutScroll {
-  0% { opacity: 1; transform: rotate(0deg); }
-  20% { transform: rotate(-10deg); }
-  40% {
-    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 55%);
-    opacity: 0.9;
-  }
-  60% {
-    clip-path: polygon(0 55%, 100% 45%, 100% 100%, 0 100%);
-    opacity: 0.6;
-  }
-  100% { opacity: 0; transform: rotate(10deg); }
+  0%   { clip-path: none; transform: rotate(0deg); }
+  40%  { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 55%); }
+  60%  { clip-path: polygon(0 55%, 100% 45%, 100% 100%, 0 100%); }
+  100% { transform: rotate(10deg); }
 }
-
-
 
 /* 📄 scroll covers */
 .cinema-cover {
-  animation: coverStone 1s ease-out forwards;
+  animation:
+    coverStone 1.25s ease-out forwards,
+    baseDrop 1.25s ease-out forwards;
 }
 
 @keyframes coverStone {
-  0% { transform: translateY(0); opacity: 1; }
-  40% { transform: translateY(-20px); opacity: 0.9; }
-  70% { transform: translateY(-40px); opacity: 0.6; }
-  100% { opacity: 0; }
+  0%   { transform: scale(1); }
+  30%  { transform: scale(0.95); }
+  60%  { transform: scale(0.9); }
+  100% { transform: scale(0.85); }
 }
-
 
 
 /* 🪨 stone smashes */
 .cinema-smash {
-  animation: smashShears 1s ease-out forwards;
+  animation:
+    smashShears 1.25s ease-out forwards,
+    baseDrop 1.25s ease-out forwards;
 }
 
 @keyframes smashShears {
-  0% { transform: scale(1); opacity: 1; }
-  30% { transform: scale(1.3) translateY(10px); }
-  60% { transform: scale(0.8); opacity: 0.6; }
-  100% { transform: scale(0); opacity: 0; }
+  0%   { transform: rotate(0deg); }
+  30%  { transform: rotate(-8deg); }
+  60%  { transform: rotate(12deg); }
+  100% { transform: rotate(18deg); }
 }
 
 
 /* 🔥 flame burns */
 .cinema-burn {
-  animation: burnScroll 1.2s ease-out forwards;
+  animation:
+    burnScroll 1.25s ease-out forwards,
+    baseDrop 1.25s ease-out forwards;
 }
 
 @keyframes burnScroll {
-  0% { filter: brightness(1); opacity: 1; }
-  20% { filter: brightness(1.4) sepia(0.6); }
-  40% { filter: brightness(1.2) sepia(0.8); opacity: 0.85; }
-  60% { filter: brightness(0.9) sepia(1); opacity: 0.6; transform: scale(0.95); }
-  80% { filter: brightness(0.6) sepia(1) blur(1px); opacity: 0.3; }
-  100% { filter: brightness(0.3) sepia(1) blur(2px); opacity: 0; transform: scale(0.8); }
+  0%   { filter: brightness(1); }
+  30%  { filter: brightness(1.3); }
+  60%  { filter: brightness(1.6); }
+  100% { filter: brightness(2); }
 }
 
 
 
 /* 🪞 mirror reflects/shines */
 .cinema-reflect {
-  animation: reflectDissolve 1.2s ease-out forwards;
+  animation:
+    reflectStone 1.25s ease-out forwards,
+    baseDrop 1.25s ease-out forwards;
 }
 
-@keyframes reflectDissolve {
-  0% { filter: brightness(1); opacity: 1; }
-  30% { filter: brightness(1.5); }
-  60% { filter: brightness(2) blur(3px); opacity: 0.6; }
-  100% { filter: brightness(2.5) blur(6px); opacity: 0; }
+@keyframes reflectStone {
+  0%   { transform: rotateY(0deg);   filter: brightness(1); }
+  30%  { transform: rotateY(20deg);  filter: brightness(1.2); }
+  60%  { transform: rotateY(40deg);  filter: brightness(1.4); }
+  100% { transform: rotateY(60deg);  filter: brightness(1.6); }
 }
-
 
 /* Generic fallback animation */
 .cinema-generic {
-  animation: cinemaGeneric 0.7s ease-out forwards;
+  animation: genericDrop 1.25s ease-out forwards;
 }
 
-@keyframes cinemaGeneric {
+@keyframes genericDrop {
   0% {
-    transform: scale(1);
+    opacity: 1;
+    transform: scale(1) translateY(0);
   }
 
-  40% {
-    transform: scale(1.2);
+  50% {
+    opacity: 0.7;
+    transform: scale(0.9) translateY(20px);
   }
 
   100% {
-    transform: scale(1.1);
+    opacity: 0;
+    transform: scale(0.8) translateY(120px);
   }
 }
 
-/* ---------------------------------------------------------
-   NULL ROUND (TIE) ANIMATION
---------------------------------------------------------- */
+/* NULL ROUND (TIE) ANIMATION */
 .mirror-null-row {
   display: flex;
   gap: 16px;
@@ -647,10 +578,7 @@ input {
     opacity: 0;
   }
 }
-
-/* ---------------------------------------------------------
-   FINAL MESSAGE INSIDE MIRROR
---------------------------------------------------------- */
+/* FINAL MESSAGE INSIDE MIRROR */
 .mirror-message {
   position: absolute;
   inset: 0;
@@ -687,11 +615,7 @@ input {
   margin: 0 6px;
 }
 
-
-
-/* ---------------------------------------------------------
-   MOBILE RESPONSIVENESS
---------------------------------------------------------- */
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 480px) {
   .card {
     padding: 18px;
@@ -702,15 +626,7 @@ input {
     width: 180px;
     height: 220px;
   }
-
-  .mirror-wrapper {
-    position: relative;
-    width: 100%;
-  }
-
   .mirror-corner {
-    position: absolute;
-    bottom: 0px;
     left: 320px;
   }
 

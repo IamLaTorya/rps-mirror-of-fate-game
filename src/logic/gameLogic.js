@@ -165,7 +165,7 @@ export function createPlayRound({
                 if (tieRound) {
                     setAnimateNullRound(true);
 
-                    // Remove tie animation after it finishes
+                    // Remove tie animation after it finishes 
                     setTimeout(() => {
                         setAnimateNullRound(false);
                         setWinnerEmoji("");
@@ -179,10 +179,15 @@ export function createPlayRound({
                     setAnimateLoser(true);
 
                     // Check if someone reached 2 wins
+                    // this timeout controls how fast the final message is revealed
                     if (newPlayerWins === 2) {
+                        setTimeout(() => {
                         endGameWithWinner("player");
+                        }, 2100);
                     } else if (newComputerWins === 2) {
+                        setTimeout(() => {
                         endGameWithWinner("computer");
+                        }, 2100);
                     }
 
                     // After animation finishes, return winner emoji to center
@@ -193,7 +198,7 @@ export function createPlayRound({
 
             }, 600); // Delay before animations start
 
-        }, 500); // Delay for ripple effect
+        }, 700); // Delay for ripple effect
     };
 }
 
@@ -256,6 +261,6 @@ export function createResetGame({
         setFadeKey(prev => prev + 1);
 
         // Return to welcome screen
-        setScreen("welcome");
+        setScreen("question");
     };
 }

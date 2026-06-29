@@ -1,22 +1,21 @@
-# 🔮 Mirror of Fates — A Mystical Rock • Paper • Scissors • Lizard • Spock Game
+# 🔮 Mirror of Fate
+Shock Your Urge
+Mirror of Fate is an intuitive, mystical decision‑reflection game where you ask a yes/no question, choose a symbol that matches your energy, and watch fate respond through cinematic mirror animations.
 
-Mirror of Fates is an enchanted, cinematic twist on the classic hand‑gesture game.  
-Ask a question, cast your move, and watch the mirror reveal how fate leans —  
-through dramatic animations, swirling magic, and prophecy‑style affirmations.
-
-This project blends gameplay, animation, and storytelling into a single mystical experience.
+The Mirror chooses a symbol too.
+Symbols interact — cut, cover, smash, burn, or reflect — and the first to two wins reveals your reflection.
 
 ---
 
 ## ✨ Features
 
 ### 🔥 Cinematic Duel Animations
-Each matchup triggers a unique, dramatic animation:
-- ✂️ Scissors slice with a magical spark burst  
-- 📄 Paper sweeps with glowing motion  
-- 🪨 Rock slams with shockwave force  
-- 🦎 Lizard snaps with venomous energy  
-- 🖖 Spock vaporizes with sci‑fi brilliance  
+Five symbolic choices:
+- 🪨 Stone (grounding)
+- 📜 Scroll (clarity)
+- ✂️ Shears (release)
+- 🔥 Flame (transformation)
+- 🪞 Mirror (truth)  
 
 ### 🌙 Fate‑Based Affirmations
 At the end of the match, the mirror delivers a prophecy:
@@ -25,8 +24,6 @@ At the end of the match, the mirror delivers a prophecy:
 
 ### 🔮 Mirror Effects
 - Ripple animations  
-- Swirling fog  
-- Glowing reflections  
 - Dramatic center‑stage duels  
 
 ### 🧠 Smart Game Logic
@@ -50,6 +47,17 @@ Designed to feel magical on:
 - **Modular game logic**  
 - **Clean component architecture**  
 - **JavaScript**
+- **LocalStorage** (journal coming soon)
+
+---
+
+## Upcoming Feature: Reflection Journal
+- A dedicated journal page will allow players to save:
+- their question
+- chosen symbol
+- mirror symbol
+- final reflection
+- personal notes
 
 ---
 ## 🌙 Author

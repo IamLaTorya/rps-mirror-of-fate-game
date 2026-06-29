@@ -8,7 +8,7 @@ export default function DuelStage({
     animateWinner,    // Boolean that triggers the winner animation
     animateLoser,     // Boolean that triggers the loser animation
     winnerSide,       // "player" or "computer" — determines starting side
-    matchupAnimation, // Special animation class for specific matchups
+    matchupAnimation, // Special animation class for specific matchups (LOSER ONLY)
 }) {
 
     // Returning the visual layout for the duel animation
@@ -18,20 +18,18 @@ export default function DuelStage({
 
             {/* 
                 WINNER EMOJI
-                - Always appears larger and more dramatic
-                - Starts from left if the player won
-                - Starts from right if the computer won
-                - Travels toward the center when animateWinner is true
-                - Also receives a matchup-specific animation (cut, smash, etc.)
+                - Travels dramatically
+                - Grows large
+                - STAYS on screen until next round
+                - DOES NOT get matchup animation
             */}
             <span
                 className={
-                    "cinema-winner " +                                 // Base winner styling
-                    (winnerSide === "player"                           // Starting side logic
-                        ? "winner-from-left "                          // Player winner starts left
-                        : "winner-from-right ") +                      // Computer winner starts right
-                    (animateWinner ? "winner-travel " : "") +          // Travel animation toggle
-                    matchupAnimation                                   // Special matchup animation
+                    "cinema-winner " +
+                    (winnerSide === "player"
+                        ? "winner-from-left "
+                        : "winner-from-right ") +
+                    (animateWinner ? "winner-travel " : "")
                 }
             >
                 {winnerEmoji}
@@ -39,17 +37,18 @@ export default function DuelStage({
 
             {/* 
                 LOSER EMOJI
-                - Appears smaller and reacts to the winner's attack
-                - Starts opposite the winner
-                - Plays a "loser-react" animation when animateLoser is true
+                - Reacts to winner
+                - Drops away
+                - Gets matchup animation (cut, burn, smash, reflect)
             */}
             <span
                 className={
-                    "cinema-loser " +                                  // Base loser styling
-                    (winnerSide === "player"                           // Starting side logic
-                        ? "loser-from-right "                          // Player winner → loser starts right
-                        : "loser-from-left ") +                        // Computer winner → loser starts left
-                    (animateLoser ? "loser-react " : "")               // Reaction animation toggle
+                    "cinema-loser " +
+                    (winnerSide === "player"
+                        ? "loser-from-right "
+                        : "loser-from-left ") +
+                    (animateLoser ? "loser-react " : "") +
+                    matchupAnimation
                 }
             >
                 {loserEmoji}
