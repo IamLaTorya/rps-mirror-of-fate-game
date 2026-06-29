@@ -1,21 +1,31 @@
 // Player win affirmations (Yes reponses)
 // export an array of yes affirmations for the player
 export const playerAffirmations = [
-    "Fate extends its hand toward your reflection, guiding your choice.",
-    "The mirror brightens — destiny folds itself gently into your favor.",
-    "Your reflection aligns with fate’s open palm; the path responds to you.",
-    "Fate’s hand rises behind your reflection, lifting your intention forward.",
-    "The mirror sees your hand and fate moves with it — the moment bends toward yes."
+    "Yes — Fate steadies its hand behind your reflection; the moment opens for you.",
+    "Yes — The mirror warms — destiny leans gently toward your intention.",
+    "Yes — Your reflection glows as fate aligns with the path you’re reaching for.",
+    "Yes — Fate lifts your hand in the mirror, guiding your desire forward.",
+    "The mirror’s light bends toward you — a quiet yes rising in your favor.",
+    "Yes — Destiny settles beside your reflection, offering its support.",
+    "Yes — Your hand meets fate’s palm in the mirror; the way responds to you.",
+    "Yes — The mirror brightens — fate leans in, ready to move with your choice.",
+    "Yes — Fate circles your reflection with calm assurance; the moment is yours.",
+    "Yes — The mirror hums softly — destiny opens a door in your direction."
 ];
 
 // Computer win affirmations (No responses)
 // export an array of no affirmations for the computer
 export const computerAffirmations = [
-    "Fate withdraws its hand from your reflection; this moment is not yours.",
-    "The mirror dims — destiny folds away from your grasp.",
-    "Your reflection reaches, but fate’s hand does not rise to meet it.",
-    "Fate turns its palm aside, offering no support for this choice.",
-    "The mirror sees your hand hesitate, and fate leans away from your desire."
+    "Fate lowers its hand from your reflection; not right now.",
+    "The mirror dims — destiny steps back from this moment.",
+    "Your reflection reaches, but fate does not rise to meet it — not yet.",
+    "Fate turns aside, offering no movement toward this choice.",
+    "The mirror cools — destiny leans away from your desire for now.",
+    "Fate pauses behind your reflection; this is not the moment.",
+    "Your hand touches the mirror, but fate remains still — not right now.",
+    "Destiny folds away from your grasp; the path does not open today.",
+    "The mirror softens — fate withdraws its support for this outcome.",
+    "Fate’s palm closes gently, signaling a quiet not now."
 ];
 
 // get the randomAffirmation message for the winner
@@ -26,8 +36,8 @@ export const randomAffirmation = (winner) => {
         const idx = Math.floor(Math.random() * playerAffirmations.length);
         // Return the randomly selected player affirmation
         return playerAffirmations[idx];
-    } 
-    
+    }
+
     // Otherwise, choose from the computer affirmations
     else {
         // Generate a random index within the computer array

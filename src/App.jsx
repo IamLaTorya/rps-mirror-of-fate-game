@@ -23,6 +23,7 @@ import { createPlayRound, createResetGame } from "./logic/gameLogic";
 // These are the three main screens of your app.
 
 import WelcomeScreen from "./screens/WelcomeScreen";
+import InstructionScreen from "./screens/InstructionScreen";
 import QuestionScreen from "./screens/QuestionScreen";
 import GameScreen from "./screens/GameScreen";
 import Footer from "./components/Footer";
@@ -89,7 +90,7 @@ export default function App() {
 
   // END GAME LOGIC
   // Called when either player reaches 2 wins.
-  
+
   const endGameWithWinner = (winner) => {
     // Get a fate-based affirmation message
     const message = randomAffirmation(winner);
@@ -171,6 +172,9 @@ export default function App() {
             <WelcomeScreen goToScreen={goToScreen} />
           )}
 
+          {/* INSTRUCTION SCREEN */}
+          {screen === "instructions" && <InstructionScreen goToScreen={setScreen} />}
+
           {/* QUESTION SCREEN */}
           {screen === "question" && (
             <QuestionScreen
@@ -206,7 +210,7 @@ export default function App() {
           )}
 
         </div>
-        <Footer/> {/*Footer sits Below the card */}
+        <Footer /> {/*Footer sits Below the card */}
       </div>
     </>
   );

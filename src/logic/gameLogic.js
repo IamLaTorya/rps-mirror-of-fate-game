@@ -1,5 +1,5 @@
 // Importing the move list, emoji map, and win/loss rules
-import { moves, emojis, rules } from "./rules";
+import { moves, emojis, rules, explanationMap } from "./rules";
 
 // Importing the function that returns a fate-based affirmation
 import { randomAffirmation } from "./affirmations";
@@ -100,20 +100,20 @@ export function createPlayRound({
                 // Determine which special animation to play
                 const matchup = `${playerMove}-${computerMove}`;
                 switch (matchup) {
-                    case "scissors-paper":
+                    case "shears-scroll":
                         setMatchupAnimation("cinema-cut");
                         break;
-                    case "paper-rock":
+                    case "scroll-stone":
                         setMatchupAnimation("cinema-cover");
                         break;
-                    case "rock-scissors":
+                    case "stone-shears":
                         setMatchupAnimation("cinema-smash");
                         break;
-                    case "lizard-paper":
-                        setMatchupAnimation("cinema-bite");
+                    case "flame-scroll":
+                        setMatchupAnimation("cinema-burn");
                         break;
-                    case "spock-rock":
-                        setMatchupAnimation("cinema-vaporize");
+                    case "mirror-stone":
+                        setMatchupAnimation("cinema-reflect");
                         break;
                     default:
                         setMatchupAnimation("cinema-generic");
@@ -134,20 +134,20 @@ export function createPlayRound({
                 // Determine special animation
                 const matchup = `${computerMove}-${playerMove}`;
                 switch (matchup) {
-                    case "scissors-paper":
+                    case "shears-scroll":
                         setMatchupAnimation("cinema-cut");
                         break;
-                    case "paper-rock":
+                    case "scroll-stone":
                         setMatchupAnimation("cinema-cover");
                         break;
-                    case "rock-scissors":
+                    case "stone-shears":
                         setMatchupAnimation("cinema-smash");
                         break;
-                    case "lizard-paper":
-                        setMatchupAnimation("cinema-bite");
+                    case "flame-scroll":
+                        setMatchupAnimation("cinema-burn");
                         break;
-                    case "spock-rock":
-                        setMatchupAnimation("cinema-vaporize");
+                    case "mirror-stone":
+                        setMatchupAnimation("cinema-reflect");
                         break;
                     default:
                         setMatchupAnimation("cinema-generic");

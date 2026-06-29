@@ -6,9 +6,9 @@ export default function WelcomeScreen({ goToScreen }) {
         <>
             <div className="logo-container">
                 <img src={logo} alt="Reflection Mirror Logo" />
-                <p className="directions">Ask a yes/no question, play the game, and let the mirror reveal your fate.</p>
-                <button onClick={() => goToScreen("question")}>
-                    Begin Reflection
+                <p>The Mirror answers through symbols of fate. Choose the one that calls to you—the hand guides your intuition. You never know if the reflection leans yes or no, and that spark of surprise reveals your true urge.</p>
+                <button onClick={() => goToScreen("instructions")}>
+                    Instructions
                 </button>
             </div>
         </>

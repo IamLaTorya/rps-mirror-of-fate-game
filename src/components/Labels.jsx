@@ -14,12 +14,12 @@ export default function Labels({ playerChoice, computerChoice }) {
 
             {/* 
                 PLAYER LABEL BLOCK
-                Shows the word "Player" and the emoji for the player's choice
+                Shows the word "Seeker" and the emoji for the player's choice
                 (only if the player has selected something)
             */}
             <div className="label-block">
                 {/* Text label for the player */}
-                <span className="label-text">Player</span>
+                <span className="label-text">Seeker</span>
 
                 {/* If the player has chosen a move, show the matching emoji */}
                 {playerChoice && (
@@ -29,12 +29,12 @@ export default function Labels({ playerChoice, computerChoice }) {
 
             {/* 
                 COMPUTER LABEL BLOCK
-                Shows the word "Computer" and the emoji for the computer's choice
+                Shows the word "Mirror" and the emoji for the computer's choice
                 (only if the computer has selected something)
             */}
             <div className="label-block">
                 {/* Text label for the computer */}
-                <span className="label-text">Computer</span>
+                <span className="label-text">Mirror</span>
 
                 {/* If the computer has chosen a move, show the matching emoji */}
                 {computerChoice && (
